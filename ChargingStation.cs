@@ -14,4 +14,18 @@ public class ChargingStation
     {
         Measurements.Add(m);
     }
+
+    public double TotalEnergyKwh()
+    {
+        double total = 0;
+
+        foreach (Measurement m in Measurements)
+        {
+            total = total + m.Kw * 0.25;
+        }
+
+        return total;
+    }
+
 }
+
