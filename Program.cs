@@ -31,3 +31,15 @@ station.AddMeasurement(new Measurement
 });
 
 Console.WriteLine(station.Name + " har levererat " + station.TotalEnergyKwh() + " kWh.");
+
+Measurement m = new Measurement
+{
+    Time = new DateTime(2026, 10, 27, 9, 0, 0),
+    Kw = 8.0
+};
+
+station.AddMeasurement(m);
+
+Console.WriteLine("Före ändring: " + station.TotalEnergyKwh() + " kWh");
+m.Kw = 0;
+Console.WriteLine("Efter ändring: " + station.TotalEnergyKwh() + " kWh");
